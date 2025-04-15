@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header class="first_container">
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="first_container">
+            <h1 class="heading">Welcome to HotelBook</h1>
+            <p>Your perfect stay awaits</p>
+        </div>
+        <div class="login_bg">
+            <button id="login-button">Login</button>
+            <button id="signup-button">Sign Up</button>
+        </div>
+        <div class="room-card">
+            <img src="room1.jpg" alt="Room 1">
+        </div>
+        <!-- Login Modal -->
+        <div id="login-modal" class="hidden">
+            <div class="modal-content">
+                <form id="login-form" action="login.php" method="POST">
+                    <label for="login-username">Email:</label>
+                    <input type="text" id="login-username" name="username" required>
+
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" name="password" required>
+                    <button type="submit" id="login-button">Login Now</button>
+                </form>
+
+            </div>
+        </div>
+
+        <!-- Signup Modal -->
+        <div id="signup-modal" class="hidden">
+            <div class="modal-content">
+                <form id="signup-form" action="signup.php" method="POST">
+                    <label for="signup-username">Username:</label>
+                    <input type="text" id="signup-username" name="username" required>
+
+                    <label for="signup-email">Email:</label>
+                    <input type="email" id="signup-email" name="email" required>
+
+                    <label for="signup-password">Password:</label>
+                    <input type="password" id="signup-password" name="password" required>
+
+                    <label for="signup-confirm-password">Confirm Password:</label>
+                    <input type="password" id="signup-confirm-password" name="confirm-password" required>
+
+                    <button type="submit" id="signup-button">Sign Up</button>
+                </form>
+
+            </div>
+
+        </div>
+    </header>
+
+    <section id="rooms">
+        <h2>Our Rooms</h2>
+        <div class="redesign">
+            <div class="room-card" id="room1">
+                <img src="room1.jpg" alt="Luxury Suite">
+                <div class="details">
+                    <h3>Luxury Suite</h3>
+                    <p>Experience luxury with our spacious suites.</p>
+                    <button onclick="bookRoom('Luxury Suite')">Book Now</button>
+                </div>
+            </div>
+    
+            <div class="room-card" id="room2">
+                <img src="room2.jpg" alt="Deluxe Room">
+                <div class="details">
+                    <h3>Deluxe Room</h3>
+                    <p>Perfect for a comfortable and relaxing stay.</p>
+                    <button onclick="bookRoom('Deluxe Room')">Book Now</button>
+                </div>
+            </div>
+            <div class="room-card" id="room3">
+                <img src="room3.jpg" alt="Family Room">
+                <div class="details">
+                    <h3>Family Room</h3>
+                    <p>Spacious and cozy, ideal for families.</p>
+                    <button onclick="bookRoom('Family Room')">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking-form">
+        <h2>Book Your Stay</h2>
+        <form id="booking">
+            <label for="room-type">Room Type:</label>
+            <input type="text" id="room-type" name="room-type" readonly>
+
+            <label for="check-in">Check-In Date:</label>
+            <input type="date" id="check-in" name="check-in" required>
+
+            <label for="check-out">Check-Out Date:</label>
+            <input type="date" id="check-out" name="check-out" required>
+
+            <label for="guests">Number of Guests:</label>
+            <input type="number" id="guests" name="guests" min="1" required>
+
+            <button type="submit">Confirm Booking</button>
+        </form>
+    </section>
+    <section id="user-data">
+        <h2>User Management</h2>
+        <table id="user-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2024 HotelBook. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
